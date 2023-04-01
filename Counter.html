@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Counter</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body{
+        background-color: rgba(1, 1, 19, 0.849);
+      }
+
+      input[type=text] {
+        width: 100%;
+        padding: 20px;
+        border: none;
+        border-radius: 50px;
+        margin-bottom: 40px;
+        font-size: 25px;
+        text-align: center;
+        color: rgb(38, 108, 170);
+        
+      }
+
+      button{
+        width: 100%;
+        padding: 20px;
+        border: none;
+        border-radius: 50px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      button {
+        background-color: #49516d;
+        color: black;
+        cursor: pointer;
+        
+      }
+
+      #count:hover {
+        background-color: #1fda95;
+      }
+      #reset:hover{
+        background-color: rgb(255, 0, 0);
+      }
+
+      h1 {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+        color: Yellow;
+        font-size: 50px;
+        font-weight: 600;
+      }
+
+      #wel{
+        margin-bottom: 50px;
+        color: salmon;
+        font-size: 20px;
+      }
+
+      p{
+        text-align: center;
+      }
+
+      #para{
+        color: #1fda95;
+      }
+
+      /* Responsive layout - makes the input fields stack on top of each other */
+      @media (max-width: 600px) {
+        input[type=text], button {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+    </style>
+    <script>
+      function changeValue() {
+        document.getElementById("myInput").disabled = false;
+        var inputBox = document.getElementById("myInput");
+        var currentValue = parseInt(inputBox.value);
+        var newValue = currentValue + 1;
+        inputBox.value = newValue.toString();
+
+      }
+
+      function resetValue() {
+        if(document.getElementById("myInput").value != "0"){
+            document.getElementById("myInput").value = "0";
+        }
+        else{
+            alert("First start to count then try to reset");
+        }
+      }
+
+      function disableBox() {
+        document.getElementById("myInput").disabled = true;
+        alert("Change will only be seen when you press button");
+        document.getElementById("myInput").style.backgroundColor = "white";
+        document.getElementById("myInput").disabled = false;
+      }
+    
+    </script>
+  </head>
+  <body>
+
+    <h1>Counter</h1>
+
+    <p id="wel"><b>Welcome!!!</b></p>
+
+    <input onclick="disableBox()" type="text" id="myInput" value="0">
+
+    <button id="count" type="button" onclick="changeValue()" value="Count">Count</button>
+    <button id="reset" type="button" onclick="resetValue()" value="Reset">Reset</button>
+    
+    <p id="para">Click as many times as you can</p>
+
+  </body>
+</html>
