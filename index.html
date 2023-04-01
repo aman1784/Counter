@@ -85,14 +85,11 @@
         var currentValue = parseInt(inputBox.value);
         var newValue = currentValue + 1;
         inputBox.value = newValue.toString();
-        document.getElementById("count").style.backgroundColor = "#8391c5";
-
       }
 
       function resetValue() {
         if(document.getElementById("myInput").value != "0"){
             document.getElementById("myInput").value = "0";
-            document.getElementById("reset").style.backgroundColor = "#8391c5";
         }
         else{
             alert("First start to count then try to reset");
